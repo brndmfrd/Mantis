@@ -1,0 +1,36 @@
+﻿<Window x:Class="CharacterSheet.Shell"
+        xmlns:prism="http://www.codeplex.com/prism"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pathfinder Character Sheet" Height="700" Width="1200"
+        WindowStyle="None"
+        MouseDown="Window_MouseDown"
+        BorderBrush="White"
+        ResizeMode="NoResize"
+        BorderThickness="1">
+
+    <!--<ItemsControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Height="336" Width="300"/>-->
+
+    <Grid HorizontalAlignment="Left" Height="700" VerticalAlignment="Top" Width="1200" Background="#222222">
+        <!-- Minimize and Close buttons -->
+        <Label x:Name="bttn_close" HorizontalContentAlignment="Center" Content="X" Foreground="White" Margin="1165,0,10,675" MouseDown="bttn_close_MouseDown" Background="Black" Width="25" Height="25"/>
+        <Label x:Name="bttn_minimize" HorizontalContentAlignment="Center" Content="-" Foreground="White" Margin="1135,0,40,675" Background="Black" MouseDown="bttn_minimize_MouseDown" Width="25" Height="25"/>
+
+        <!-- Just a black rectangle for looks -->
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="700" Stroke="Black" Width="100"/>
+
+        <!--Status effects region-->
+        <UserControl Name="StatusEffectsRegion" prism:RegionManager.RegionName="StatusEffectsRegion" Width="1025" Height="50" Margin="105,30,0,620" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <UserControl Name="ControlRegion" prism:RegionManager.RegionName="ControlRegion" Width="1095" Height="80" Margin="105,620,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <!-- Region for all the content :: width:1100 height:670-->
+        <UserControl Name="MainRegion" prism:RegionManager.RegionName="MainRegion" Margin="100,30,0,0" />
+        <!--<UserControl Name="PrimaryContentRegion" prism:RegionManager.RegionName="PrimaryContentRegion" Margin="100,80,541,85" />
+        <UserControl Name="AuxContentRegion" prism:RegionManager.RegionName="AuxContentRegion" Margin="664,80,70,85" />-->
+        <UserControl Name="PrimaryContentRegion" prism:RegionManager.RegionName="PrimaryContentRegion" Margin="100,80,70,85" />
+
+        <!-- Navigation Bar Region-->
+        <UserControl Name="NavigationBarRegion" prism:RegionManager.RegionName="NavigationBarRegion" Width="100" Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+    </Grid>
+
+</Window>

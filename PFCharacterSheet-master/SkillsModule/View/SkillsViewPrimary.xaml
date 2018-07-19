@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="SkillsModule.View.SkillsViewPrimary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:SkillsModule.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance ViewModel:SkillsViewModel}">
+    
+    <UserControl.DataContext>
+        <ViewModel:SkillsViewModel/>
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="SkillsListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding Path=MySelectedObject}">
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding RollCheck}"/>
+                </ListBox.InputBindings>
+                
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="SKILLS" Source="{Binding VmDisplayObjects}"/>
+                </ListBox.Resources>
+            
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource SKILLS}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
+            
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" 
+                                          Command="{Binding DataContext.RollCheck, ElementName=SkillsListBox}" 
+                                          CommandParameter="{Binding ElementName=SkillsListBox, Path=MySelectedObject}"/>
+                            </Grid.InputBindings>
+                            <TextBlock x:Name="SkillName" Text="{Binding Path=Name, Mode=OneWay}" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right"/>
+                            <TextBlock x:Name="SkillBonus" Text="{Binding Path=Value, Mode=OneWay}" Grid.Column="1" Grid.Row="0" Foreground="#01C5BB" Margin="2,0,0,0" HorizontalAlignment="Left"/>
+                            <TextBlock x:Name="SkillRollResult" Text="{Binding Path=Result, Mode=OneWay}" Grid.Column="2" Grid.Row="0" Foreground="Red" HorizontalAlignment="Right" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+    </Border>
+</UserControl>

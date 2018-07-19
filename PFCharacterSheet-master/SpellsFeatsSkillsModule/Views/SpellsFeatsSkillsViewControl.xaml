@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="SpellsFeatsSkillsModule.Views.SpellsFeatsSkillsViewControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:SpellsFeatsSkillsModule.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="670" d:DesignWidth="1100"
+             d:DataContext="{d:DesignInstance ViewModel:SpellsFeatsSkillsViewModel}">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/ActiveCharacter;component/SharedResources/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            
+            <!-- SKILLS -->
+            <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="409">
+                <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Skills"/>
+                <ListBox x:Name="SkillsListBox" ItemsSource="{Binding Skills}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <TextBlock x:Name="Value" Text="{Binding Path=Ranks, Mode=OneWay}" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <!-- FEATS -->
+            <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="260">                
+                <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Feats"/>
+                <ListBox x:Name="FeatsListBox" ItemsSource="{Binding Feats}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+            <!-- SPELLS -->
+            <StackPanel Orientation="Vertical" Margin="0,0,30,170" Width="371">
+                <Label Margin="10,10,10,0"  Width="100" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Foreground="Orange" Content="Spells"/>
+                <ListBox x:Name="SpellsListBox" ItemsSource="{Binding Spells}" Background="{x:Null}" Foreground="Teal" BorderBrush="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" FontSize="18">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="AbilityName" Text="{Binding Path=Name, Mode=OneWay}" Foreground="Orange" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+
+        </StackPanel>
+            <TextBlock Grid.Row="1" Foreground="AliceBlue" Text="{Binding SelectedValue.Description, ElementName=SkillsListBox}" Margin="0,518,0,0"/>
+    </Grid>
+
+    <!--Use this this add more feats to feats or spells to spells-->
+    <!--<Button Command="{Binding AddToFeatsCommand}" Content="ClickMe"/>-->
+    <!--Use this to display the long descriptoin of the spell or feat at the bottom on the screen-->
+    <!--<TextBlock Text="{Binding SelectedValue, ElementName=featsListBox}"/>-->
+
+
+
+</UserControl>

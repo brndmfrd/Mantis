@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="CombatModule.Views.CombatViewPrimary"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ViewModel="clr-namespace:CombatModule.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="670" d:DesignWidth="1100"
+             d:DataContext="{d:DesignInstance ViewModel:CombatViewModel}">
+    <UserControl.DataContext>
+        <ViewModel:CombatViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="pack://application:,,,/SharedResources;component/Styles/MainContentStyles.xaml"/>
+    </UserControl.Resources>
+
+    <Border CornerRadius="0" BorderBrush="CornflowerBlue" BorderThickness="1">
+        <DockPanel>
+            <ListBox x:Name="CombatListBox" 
+                     Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
+                     ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
+                     SelectedItem="{Binding Path=MySelectedObject}"  
+                     >
+                <ListBox.InputBindings>
+                    <KeyBinding Key="Enter" Command="{Binding RollCheck}"/>
+                </ListBox.InputBindings>
+                
+                <ListBox.Resources>
+                    <CollectionViewSource x:Key="CB" Source="{Binding VmDisplayObjects}"/>
+                </ListBox.Resources>
+
+                <ListBox.ItemsSource>
+                    <CompositeCollection>
+                        <CollectionContainer Collection="{Binding Source={StaticResource CB}}"/>
+                    </CompositeCollection>
+                </ListBox.ItemsSource>
+                
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackPanel Background="#FF3C3C3C" DockPanel.Dock="Top">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.InputBindings>
+                                    <MouseBinding Gesture="LeftDoubleClick" 
+                                          Command="{Binding DataContext.RollCheck, ElementName=CombatListBox}" 
+                                          CommandParameter="{Binding ElementName=CombatListBox, Path=MySelectedObject}"/>
+                                </Grid.InputBindings>
+                                <TextBlock x:Name="NameOfConnection" Text="{Binding Path=SiteName, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="0"/>
+                                <TextBlock x:Name="AccountName" Text="{Binding Path=UserName, Mode=OneWay}" Grid.Column="1"/>
+                                <TextBlock x:Name="IsAvailable" Text="{Binding Path=IsAvailable, Mode=OneWay}" Grid.Column="2"/>
+                                
+                            </Grid>
+
+                        </StackPanel>
+
+                    </DataTemplate>                    
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Right" Width="400">
+                
+            <TextBox x:Name="UserName" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.UserName, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="MachineName" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.MachineName, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="MachineDescription" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.MachineDescription, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="DomainName" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.DomainName, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="IpAddress" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.IpAddress, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="LastLoginUser" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUser, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="LastLoginTimeStamp" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginTimeStamp, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="LastLogoutTimeStamp" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLogoutTimeStamp, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+
+            <TextBox x:Name="LastLoginUserIp" 
+                     DockPanel.Dock="Right"
+                     VerticalAlignment="Top"
+                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
+                     Background="{x:Null}"
+                     Foreground="Teal"
+                     FontSize="14"
+                     TextWrapping="Wrap" />
+            </StackPanel>
+        </DockPanel>
+    </Border>
+</UserControl>
