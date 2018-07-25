@@ -9,8 +9,10 @@ namespace CombatModule.Model
 {    
     public static class CombatObjects
     {
-        // The object that is currently selected in the view 
-        public static DisplayObject CurrentSelectedObject = new DisplayObject();
+        // Tied to the currently selected object in the view.
+        // This ties the current selected item in the view together with the VM.
+        // This was moved to the VM. In case of emergency, move it back here.
+        //public static DisplayObject CurrentSelectedObject = new DisplayObject();
         
         public static ObservableCollection<DisplayObject> displayObjects = GetDisplayObjects();
         

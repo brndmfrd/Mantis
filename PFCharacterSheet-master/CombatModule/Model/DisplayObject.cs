@@ -7,7 +7,7 @@ namespace CombatModule.Model
     // todo: maybe move this into ModuleTools since it is generic and all modules can use it to customize what they display
     public class DisplayObject : ObservableObject
     {
-
+        public string _id;
         public string _userName;
         public string _siteName;
         public string _machineName;
@@ -23,6 +23,7 @@ namespace CombatModule.Model
         // do we still need this? remove?
         public Func<string> CustomMethod;
 
+        public string Id { get; set; }
         public string UserName { get { return _userName; } set { _userName = value; RaisePropertyChangedEvent("UserName"); } }
         public string SiteName { get { return _siteName; } set { _siteName = value; RaisePropertyChangedEvent("SiteName"); } }
         public string MachineName { get { return _machineName; } set { _machineName = value; RaisePropertyChangedEvent("MachineName"); } }
@@ -34,7 +35,5 @@ namespace CombatModule.Model
         public string LastLogoutTimeStamp { get { return _lastLogoutTimeStamp; } set { _lastLogoutTimeStamp = value; RaisePropertyChangedEvent("LastLogoutTimeStamp"); } }
         public string LastLoginUserIp { get { return _lastLoginUserIp; } set { _lastLoginUserIp = value; RaisePropertyChangedEvent("LastLoginUserIp"); } }
         public string IsAvailable { get { return _isAvailable; } set { _isAvailable = value; RaisePropertyChangedEvent("IsAvailable"); } }
-
-
     }
 }

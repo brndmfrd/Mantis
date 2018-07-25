@@ -11,16 +11,24 @@ namespace CombatModule.ViewModels
 {
     public class CombatViewModel : ObservableObject, INavigationAware
     {
+        public static DisplayObject CurrentSelectedObject = new DisplayObject();
+
+
         #region Properties
         public IEnumerable<DisplayObject> VmDisplayObjects
         {
             get { return CombatObjects.DisplayObjects; }
         }
-        
+
+        //public DisplayObject MySelectedObject
+        //{
+        //    get { return CombatObjects.CurrentSelectedObject; }
+        //    set { CombatObjects.CurrentSelectedObject = value; }
+        //}
         public DisplayObject MySelectedObject
         {
-            get { return CombatObjects.CurrentSelectedObject; }
-            set { CombatObjects.CurrentSelectedObject = value; }
+            get { return CurrentSelectedObject; }
+            set { CurrentSelectedObject = value; }
         }
         #endregion Properties
 
@@ -41,26 +49,22 @@ namespace CombatModule.ViewModels
             //var targetItem = VmDisplayObjects.FirstOrDefault(i => i.UserName == MySelectedObject.UserName);
 
             // Make this an async task
-            // we must use a connection file to save user name and passwords (see mstsc /? or mstsc /edit:connectionFile.txt)
             // test connections
-            // verify connection file exists
+            // also consider trying fqdn and an ip address resolution test
             // check network connectivity
             // write a log to the users view
             // communicate to host that a new connection is being made.
-            return; // remove this when ready.
+            //return; // remove this when ready.
             using (Process p = new Process())
             {
-                p.StartInfo.FileName = @"C:\WINDOWS\system32\mstsc.exe";
+                //p.StartInfo.FileName = @"C:\WINDOWS\system32\mstsc.exe";
                 p.StartInfo.Arguments = $"/v:{MySelectedObject.IpAddress}";
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.UseShellExecute = false;
                 p.StartInfo.CreateNoWindow = true;
                 p.Start();
                 var x = p.Id;   // We need this to keep track of all the connections the user is maintaining. Keep track of these at a higher level and when one is removed, update host.
-            }
-                                  
-
-            //targetItem.DomainName = result.ToString();
+            }                                  
         }
         #endregion Private Methods
 

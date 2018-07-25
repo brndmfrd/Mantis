@@ -76,6 +76,10 @@
       <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -116,6 +120,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Archivist\Archivist.csproj">
+      <Project>{16f70c24-fe0d-40f7-8db2-71142a023973}</Project>
+      <Name>Archivist</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CharacterDataObjects\CharacterDataObjects.csproj">
       <Project>{1f0df7a8-b569-4fbd-8bda-eb6bf2d5521d}</Project>
       <Name>CharacterDataObjects</Name>

@@ -30,6 +30,14 @@ namespace Archivist
             writer.Close();
         }
 
+        public static void SaveConnectionAccounts(string serializedData)
+        {
+
+            using (var writer = new StreamWriter("fileName")) {
+
+                writer.Write(serializedData);
+            }
+        }
 
 
         private static string jsonSkill()
