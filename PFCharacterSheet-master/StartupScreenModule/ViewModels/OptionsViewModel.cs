@@ -123,7 +123,7 @@ namespace OptionsModule.ViewModels
         private void ConfirmLoad()
         {
             // todo: check if SelectedItem is null or irregular.
-            LoadCharacterFile.BeginLoadCharacterFile(SelectedItem);
+            Loader.GetRemoteUserAccountsFromFile(SelectedItem);
             LoadButtonToggle = false;
         }
         #endregion Command Methods        
@@ -136,11 +136,11 @@ namespace OptionsModule.ViewModels
         {
             LoadCharacterObjectsWithData someDude;
 
-            if (!LoadCharacterObjectsWithData.IhaveBeenBuilt)
-            {
-                someDude = new LoadCharacterObjectsWithData();
-                someDude.BuildUpNewCharacter();
-            }    
+            //if (!LoadCharacterObjectsWithData.IhaveBeenBuilt)
+            //{
+            //    someDude = new LoadCharacterObjectsWithData();
+            //    someDude.BuildUpNewCharacter();
+            //}    
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

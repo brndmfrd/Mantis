@@ -22,10 +22,10 @@ namespace FeatsModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach (var elem in MyCharacter.Feats)
-                {
-                    tmp.Add(new DisplayObject { Name = elem.Name});
-                }
+                //foreach (var elem in MyConnections.Feats)
+                //{
+                //    tmp.Add(new DisplayObject { Name = elem.Name});
+                //}
 
                 return tmp;
             }

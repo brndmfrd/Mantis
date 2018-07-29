@@ -11,8 +11,8 @@ namespace CharacterCreationModule.ViewModels
     public class CharacterCreation : ObservableObject, INavigationAware
     {
         //public IEnumerable<BasicInformation> BasicInformation { get { return NewCharacterContainer.Information; }  }
-        public IEnumerable<DisplayObject> BasicInformation { get { return NewCharacterContainer.Information; }  }
-        public IEnumerable<DisplayObject> Abilities { get { return NewCharacterContainer.AbilityScores; } }
+        //public IEnumerable<DisplayObject> BasicInformation { get { return NewCharacterContainer.Information; }  }
+        //public IEnumerable<DisplayObject> Abilities { get { return NewCharacterContainer.AbilityScores; } }
         public IEnumerable<DisplayObject> Languages { get { return NewCharacterContainer.Languages; } }
         public IEnumerable<DisplayObject> Race { get { return NewCharacterContainer.Race; } }
         public IEnumerable<DisplayObject> CharacterClasses { get { return NewCharacterContainer.Classes; }  }
@@ -93,8 +93,8 @@ namespace CharacterCreationModule.ViewModels
         public void OnNavigatedTo(NavigationContext navigationContext)
         {
             // If we have no character data load these defaults (for testing purposes only, remove later)
-            if (NewCharacterContainer.Information.Count <= 0)
-            {
+            //if (NewCharacterContainer.Information.Count <= 0)
+            //{
                 //Character
                 //NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Character Name", Value = "Bryan" });
                 //NewCharacterContainer.Information.Add(new BasicInformation() { Name = "Player Name", Value = "Duraxis" });
@@ -286,7 +286,7 @@ namespace CharacterCreationModule.ViewModels
 
             
             
-            }
+            //}
         }
         public bool IsNavigationTarget(NavigationContext navigationContext)
         {

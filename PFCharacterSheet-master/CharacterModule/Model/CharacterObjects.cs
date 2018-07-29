@@ -26,10 +26,10 @@ namespace CharacterModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach (var elem in MyCharacter.BasicCharacterInfo)
-                {
-                    tmp.Add(new DisplayObject { Name = elem.Key, Value = elem.Value });
-                }
+                //foreach (var elem in MyConnections.BasicCharacterInfo)
+                //{
+                //    tmp.Add(new DisplayObject { Name = elem.Key, Value = elem.Value });
+                //}
 
                 return tmp;
             }
@@ -41,10 +41,10 @@ namespace CharacterModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach (var elem in MyCharacter.Languages)
-                {
-                    tmp.Add(new DisplayObject { Name = "Language", Value = elem });
-                }
+                //foreach (var elem in MyConnections.Languages)
+                //{
+                //    tmp.Add(new DisplayObject { Name = "Language", Value = elem });
+                //}
 
                 return tmp;
             }
@@ -58,10 +58,10 @@ namespace CharacterModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach(var elem in MyCharacter.AbilityScores)
-                {
-                    tmp.Add(new DisplayObject { Name = elem.Key, Value = string.Format($"{elem.Value.Value.ToString()} +{elem.Value.AbilityModifier.ToString()}")});
-                }
+                //foreach(var elem in MyConnections.AbilityScores)
+                //{
+                //    tmp.Add(new DisplayObject { Name = elem.Key, Value = string.Format($"{elem.Value.Value.ToString()} +{elem.Value.AbilityModifier.ToString()}")});
+                //}
 
                 return tmp;
             } 
@@ -73,10 +73,10 @@ namespace CharacterModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach (var elem in MyCharacter.JobClasses)
-                {
-                    tmp.Add(new DisplayObject { Name = elem.Key, Value = elem.Value.Level.ToString() });
-                }
+                //foreach (var elem in MyConnections.JobClasses)
+                //{
+                //    tmp.Add(new DisplayObject { Name = elem.Key, Value = elem.Value.Level.ToString() });
+                //}
 
                 return tmp;
             }

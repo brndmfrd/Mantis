@@ -21,10 +21,10 @@ namespace GearModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach (var elem in MyCharacter.Gear)
-                {
-                    tmp.Add(new DisplayObject { Name = elem.Name });
-                }
+                //foreach (var elem in MyConnections.Gear)
+                //{
+                //    tmp.Add(new DisplayObject { Name = elem.Name });
+                //}
 
                 return tmp;
             }

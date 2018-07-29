@@ -25,21 +25,21 @@ namespace CharacterDataObjects.CharacterDataElements
         {
             int retval = -1;
 
-            if (CombatManeuverType == Constants.CMB)
-            {
-                retval = MyCharacter.Bab;
-                retval += MyCharacter.AbilityScores[Constants.Strength].Value;
-                retval += MyCharacter.Size.SizeModifier;
-            }
+            //if (CombatManeuverType == Constants.CMB)
+            //{
+            //    retval = MyConnections.Bab;
+            //    retval += MyConnections.AbilityScores[Constants.Strength].Value;
+            //    retval += MyConnections.Size.SizeModifier;
+            //}
 
-            if (CombatManeuverType == Constants.CMD)
-            {
-                retval = 10;
-                retval += MyCharacter.Bab;
-                retval += MyCharacter.AbilityScores[Constants.Strength].Value;
-                retval += MyCharacter.AbilityScores[Constants.Dexterity].Value;
-                retval += MyCharacter.Size.SizeModifier;
-            }
+            //if (CombatManeuverType == Constants.CMD)
+            //{
+            //    retval = 10;
+            //    retval += MyConnections.Bab;
+            //    retval += MyConnections.AbilityScores[Constants.Strength].Value;
+            //    retval += MyConnections.AbilityScores[Constants.Dexterity].Value;
+            //    retval += MyConnections.Size.SizeModifier;
+            //}
 
             return retval;
         }

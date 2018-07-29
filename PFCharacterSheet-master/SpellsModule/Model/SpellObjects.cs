@@ -21,10 +21,10 @@ namespace SpellsModule.Model
             {
                 var tmp = new ObservableCollection<DisplayObject>();
 
-                foreach (var elem in MyCharacter.Spells)
-                {
-                    tmp.Add(new DisplayObject { Name = elem.SpellName });
-                }
+                //foreach (var elem in MyConnections.Spells)
+                //{
+                //    tmp.Add(new DisplayObject { Name = elem.SpellName });
+                //}
 
                 return tmp;
             }

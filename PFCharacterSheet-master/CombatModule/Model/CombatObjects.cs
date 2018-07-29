@@ -5,85 +5,62 @@ using CharacterDataObjects;
 using System.Collections.ObjectModel;
 using CharacterDataObjects.CharacterDataConstants;
 
+/// <summary>
+/// The 
+/// </summary>
+
 namespace CombatModule.Model
 {    
     public static class CombatObjects
-    {
-        // Tied to the currently selected object in the view.
-        // This ties the current selected item in the view together with the VM.
-        // This was moved to the VM. In case of emergency, move it back here.
-        //public static DisplayObject CurrentSelectedObject = new DisplayObject();
-        
-        public static ObservableCollection<DisplayObject> displayObjects = GetDisplayObjects();
-        
-        public static ObservableCollection<DisplayObject> DisplayObjects { get { return displayObjects; } }
-               
+    {            
+        public static ObservableCollection<DisplayObject> displayObjects = null;
+
+        public static ObservableCollection<DisplayObject> DisplayObjects {
+            get
+            {
+                if(displayObjects == null)
+                {
+
+                }
+                return displayObjects;
+            }
+        }
+
         private static ObservableCollection<DisplayObject> GetDisplayObjects()
         {
             var retval = new ObservableCollection<DisplayObject>();
 
-            retval.Add(new DisplayObject
-            {
-                UserName = "Administrator",
-                SiteName = "Tory Burch",
-                MachineName = "tory-prod-us-wcs",
-                MachineDescription = "WCS - PROD",
-                DomainName = "TORY",
-                IpAddress = "99.33.88.17",
-                LastLoginUser = "Rusty Venture",
-                LastLoginTimeStamp = DateTime.Now.ToString(),
-                LastLogoutTimeStamp = DateTime.MaxValue.ToString(),
-                LastLoginUserIp = "10.130.135.17",
-                IsAvailable = "NO"
-            });
-
-            retval.Add(new DisplayObject
-            {
-                UserName = "Johnny Bravo",
-                SiteName = "",
-                MachineName = "tory-prod-us-wcs",
-                MachineDescription = "WCS - TEST",
-                DomainName = "TORY",
-                IpAddress = "99.33.88.17",
-                LastLoginUser = "Rusty Venture",
-                LastLoginTimeStamp = DateTime.Now.ToString(),
-                LastLogoutTimeStamp = DateTime.MaxValue.ToString(),
-                LastLoginUserIp = "10.130.135.17",
-                IsAvailable = "YES"
-            });
-
-            retval.Add(new DisplayObject
-            {
-                UserName = "Johnny Bravo",
-                SiteName = "Gap Brampton",
-                MachineName = "gap01-prod-us-wcs",
-                MachineDescription = "WCS - PROD",
-                DomainName = "USGAP",
-                IpAddress = "10.30.15.32",
-                LastLoginUser = "Rusty Venture",
-                LastLoginTimeStamp = DateTime.Now.ToString(),
-                LastLogoutTimeStamp = DateTime.MaxValue.ToString(),
-                LastLoginUserIp = "10.130.135.17",
-                IsAvailable = "NO"
-            });
-
-            retval.Add(new DisplayObject
-            {
-                UserName = "Brock Sampson",
-                SiteName = "",
-                MachineName = "gap01-prod-us-ts",
-                MachineDescription = "TS - PROD",
-                DomainName = "USGAP",
-                IpAddress = "10.30.15.33",
-                LastLoginUser = "Rusty Venture",
-                LastLoginTimeStamp = DateTime.Now.ToString(),
-                LastLogoutTimeStamp = DateTime.MaxValue.ToString(),
-                LastLoginUserIp = "10.130.135.17",
-                IsAvailable = "YES"
-            });
-
             return retval;
         }
+
+
+        #region Private
+        public static void RebuildDisplayObjects()
+        {
+            // Clear our observable collection
+            displayObjects.Clear();
+
+            foreach (var elem in MyConnections.AllRemoteUserAccounts)
+            {
+                displayObjects.Add(new DisplayObject
+                {
+                    Id = elem.Id,
+                    UserName = elem.UserName,
+                    SiteName = elem.SiteName,
+                    MachineName = elem.MachineName,
+                    MachineDescription = elem.MachineDescription,
+                    DomainName = elem.DomainName,
+                    IpAddress = elem.IpAddress,
+                    LastLoginUser = elem.LastLoginUser,
+                    LastLoginTimeStamp = elem.LastLoginTimeStamp,
+                    LastLogoutTimeStamp = elem.LastLogoutTimeStamp,
+                    LastLoginUserIp = elem.LastLoginUserIp,
+                    IsAvailable = elem.IsAvailable
+                });
+            }
+        }
+        #endregion Private
+
 
     }
 }

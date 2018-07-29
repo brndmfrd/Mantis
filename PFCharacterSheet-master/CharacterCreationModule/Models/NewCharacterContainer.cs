@@ -21,12 +21,12 @@ namespace CharacterCreationModule.Models
         /// <summary>
         /// The player chosen characteristics of the character.
         /// </summary>  
-        public static ObservableCollection<DisplayObject> Information = InitInformation(MyCharacter.BasicCharacterInfo.Select(x=>x.Key));
+        //public static ObservableCollection<DisplayObject> Information = InitInformation(MyConnections.BasicCharacterInfo.Select(x=>x.Key));
 
         /// <summary>
         /// Player rolled ability scores
         /// </summary>
-        public static ObservableCollection<DisplayObject> AbilityScores = InitInformation(MyCharacter.AbilityScores.Select(x => x.Key));
+        //public static ObservableCollection<DisplayObject> AbilityScores = InitInformation(MyConnections.AbilityScores.Select(x => x.Key));
         #endregion Character Information
 
         #region Languages

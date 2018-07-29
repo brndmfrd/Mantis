@@ -43,21 +43,21 @@ namespace Archivist
         private static string jsonSkill()
         {
             string output = string.Empty;
-            output += JsonConvert.SerializeObject(MyCharacter.Skills, Formatting.None);
+            //output += JsonConvert.SerializeObject(MyConnections.Skills, Formatting.None);
             return output;
         }
 
         private static string jsonWealth()
         {
             string output = string.Empty;
-            output += JsonConvert.SerializeObject(MyCharacter.Gear, Formatting.None);
+            //output += JsonConvert.SerializeObject(MyConnections.Gear, Formatting.None);
             return output;
         }
 
         private static string jsonCharacterInfo()
         {
             string output = string.Empty;
-            output += JsonConvert.SerializeObject(MyCharacter.BasicCharacterInfo, Formatting.None);
+            //output += JsonConvert.SerializeObject(MyConnections.BasicCharacterInfo, Formatting.None);
             return output;
         }
 

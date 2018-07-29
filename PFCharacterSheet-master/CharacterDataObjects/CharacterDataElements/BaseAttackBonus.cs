@@ -20,10 +20,10 @@ namespace CharacterDataObjects.CharacterDataElements
             // Each jobclass has a current BAB derived by the class and level.
             // This will access those values and take the sum. This is our total BAB for the character 
             // (and not just for the individual jobclasses).
-            foreach(var jobclass in MyCharacter.JobClasses)
-            {
-                totalBab += jobclass.Value.BaseAttackBonus;
-            }
+            //foreach(var jobclass in MyConnections.JobClasses)
+            //{
+            //    totalBab += jobclass.Value.BaseAttackBonus;
+            //}
            
             return totalBab;
         }

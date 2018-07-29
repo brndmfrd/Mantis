@@ -62,12 +62,12 @@ namespace CharacterDataObjects.CharacterDataElements
         {
             var retval = int.MinValue;
 
-            retval = ranks;
-            retval += MyCharacter.AbilityScores[associatedAbility].AbilityModifier;
-            foreach(var elem in miscModifiers)
-            {
-                retval += elem.Value;
-            }
+            //retval = ranks;
+            //retval += MyConnections.AbilityScores[associatedAbility].AbilityModifier;
+            //foreach(var elem in miscModifiers)
+            //{
+            //    retval += elem.Value;
+            //}
 
             return retval;
 

@@ -22,6 +22,12 @@ namespace CombatModule
             regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.CombatViewPrimary));
             //regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.CombatViewAux));
 
+            // Call to archivist
+            // read file
+            // load results into DisplayObject
+
+
+
             // This is temporary for testing purposes
             //List<DisplayObject> ob = new List<DisplayObject>();
             //ob.Add(

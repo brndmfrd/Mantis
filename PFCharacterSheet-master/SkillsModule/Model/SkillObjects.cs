@@ -34,32 +34,32 @@ namespace SkillsModule.Model
         private static void RebuildDisplayObjects()
         {
             displayObjects.Clear();
-            foreach (var elem in MyCharacter.Skills)
-            {
-                displayObjects.Add(new DisplayObject { Name = elem.Key, Value = elem.Value.TotalValue.ToString() });
-            }
+            //foreach (var elem in MyConnections.Skills)
+            //{
+            //    displayObjects.Add(new DisplayObject { Name = elem.Key, Value = elem.Value.TotalValue.ToString() });
+            //}
         }
 
         public static void UpdateDisplayObjects()
         {
             // Skills were added or removed; reflect this.
-            if (displayObjects.Count != MyCharacter.Skills.Count)
-            {
-                RebuildDisplayObjects();
-                return;
-            }
+            //if (displayObjects.Count != MyConnections.Skills.Count)
+            //{
+            //    RebuildDisplayObjects();
+            //    return;
+            //}
 
             // Skills were not added or removed; check if values changed.
             foreach (var elem in displayObjects)
             {
-                if (!MyCharacter.Skills.ContainsKey(elem.Name))
-                {
-                    // Mismatch!
-                    RebuildDisplayObjects();
-                    return;
-                }
+                //if (!MyConnections.Skills.ContainsKey(elem.Name))
+                //{
+                //    // Mismatch!
+                //    RebuildDisplayObjects();
+                //    return;
+                //}
 
-                elem.Value = MyCharacter.Skills[elem.Name].TotalValue.ToString();
+                //elem.Value = MyConnections.Skills[elem.Name].TotalValue.ToString();
             }
         }
         #endregion Private Methods

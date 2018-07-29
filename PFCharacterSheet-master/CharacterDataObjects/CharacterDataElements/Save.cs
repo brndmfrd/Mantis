@@ -16,7 +16,8 @@
 
         public int Total { get { return (total = baseSave + AbilityModifier + magicModifier + miscModifier + tempModifier); } }
         public int BaseSave { get { return baseSave; } set { baseSave = value; } } // base save, for all jobclasses, based on level of each job class, specific to each save (f/r/w)
-        public int AbilityModifier { get { return MyCharacter.AbilityScores[abilityScoreName].AbilityModifier; } }
+        //public int AbilityModifier { get { return MyConnections.AbilityScores[abilityScoreName].AbilityModifier; } }
+        public int AbilityModifier { get { return 0; } }
         public int MagicModifier { get { return magicModifier; } set { magicModifier = value; } }
         public int MiscModifier { get { return miscModifier; } set { miscModifier = value; } }
         public int TempModifier { get { return tempModifier; } set { tempModifier = value; } }

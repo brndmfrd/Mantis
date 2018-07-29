@@ -54,12 +54,13 @@
     <Compile Include="CharacterDataElements\JobClass.cs" />
     <Compile Include="CharacterDataElements\Movement.cs" />
     <Compile Include="CharacterDataElements\RacialTraits.cs" />
+    <Compile Include="CharacterDataElements\RemoteUserAccount.cs" />
     <Compile Include="CharacterDataElements\Save.cs" />
     <Compile Include="CharacterDataElements\SizeClass.cs" />
     <Compile Include="CharacterDataElements\Skill.cs" />
     <Compile Include="CharacterDataElements\Spell.cs" />
     <Compile Include="CharacterDataElements\Weapon.cs" />
-    <Compile Include="MyCharacter.cs" />
+    <Compile Include="MyConnections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
