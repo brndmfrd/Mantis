@@ -15,7 +15,7 @@ namespace Archivist
     /// </summary>
     public static class DirectoryMaster
     {
-        private const string filenamePattern = @"[^\\]+\.pf$";
+        private const string filenamePattern = @"[^\\]+\.json$";
         private static Regex rgx;
         private static ObservableCollection<string> directoryFileList = new ObservableCollection<string>();
 
@@ -30,11 +30,11 @@ namespace Archivist
         {
             var cdir = Directory.GetCurrentDirectory();             // Target local directory
 
-            var pfFiles = Directory.GetFiles(cdir, "*.pf");         // Target .pf files
+            var pfFiles = Directory.GetFiles(cdir, "*.json");         // Target .json files
 
             directoryFileList.Clear();
 
-            // There are no *.pf files!
+            // There are no *.json files!
             if (pfFiles.Length == 0)
             {
                 directoryFileList.Insert(0, "No files could be found");

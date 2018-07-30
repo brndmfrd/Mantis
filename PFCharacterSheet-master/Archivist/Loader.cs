@@ -15,7 +15,8 @@ namespace Archivist
 
 
         /// <summary>
-        /// 
+        /// Reads and parses the remote user accounts file and propagates the global data model 'MyConnections.AllRemoteUserAccounts'
+        /// Intended to be called by any module that requires an update from the 'Remote User Accounts' file.
         /// </summary>
         /// <param name="value"></param>
         public static void GetRemoteUserAccountsFromFile(string value)
@@ -44,7 +45,8 @@ namespace Archivist
                             // worth noting that ObservableCollections will 'auto update' this way and not if you 
                             // directly assign to it; i.e.  Character.Skills = JsonConvert.DeserializeObject<ObservableCollection<Skill>>(line);
                             // we want to change our collection container, not replace it.
-                            foreach(var elem in x){
+                            foreach (var elem in x)
+                            {
                                 MyConnections.AllRemoteUserAccounts.Add(elem);
                             }
                         }
