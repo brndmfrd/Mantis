@@ -57,7 +57,7 @@ namespace CombatModule.ViewModels
             //return; // remove this when ready.
             using (Process p = new Process())
             {
-                //p.StartInfo.FileName = @"C:\WINDOWS\system32\mstsc.exe";
+                p.StartInfo.FileName = @"C:\WINDOWS\system32\mstsc.exe";
                 p.StartInfo.Arguments = $"/v:{MySelectedObject.IpAddress}";
                 p.StartInfo.RedirectStandardOutput = true;
                 p.StartInfo.UseShellExecute = false;

@@ -7,8 +7,8 @@
     <ProjectGuid>{1F0DF7A8-B569-4FBD-8BDA-EB6BF2D5521D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CharacterDataObjects</RootNamespace>
-    <AssemblyName>CharacterDataObjects</AssemblyName>
+    <RootNamespace>ConnectionDataObjects</RootNamespace>
+    <AssemblyName>ConnectionDataObjects</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

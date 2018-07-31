@@ -123,7 +123,7 @@ namespace OptionsModule.ViewModels
         private void ConfirmLoad()
         {
             // todo: check if SelectedItem is null or irregular.
-            Loader.GetRemoteUserAccountsFromFile(SelectedItem);
+            //Loader.GetRemoteUserAccountsFromFile(SelectedItem);
             LoadButtonToggle = false;
         }
         #endregion Command Methods        

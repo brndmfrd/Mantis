@@ -2,10 +2,12 @@
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
-using CharacterDataObjects;
-using CharacterDataObjects.CharacterDataElements;
+using ConnectionDataObjects;
+using ConnectionDataObjects.ConnectionDataElements;
 using log4net;
 using System.Collections.Generic;
+using Archivist;
+
 
 namespace Archivist
 {
@@ -19,12 +21,20 @@ namespace Archivist
         /// Intended to be called by any module that requires an update from the 'Remote User Accounts' file.
         /// </summary>
         /// <param name="value"></param>
-        public static void GetRemoteUserAccountsFromFile(string value)
+        public static void GetRemoteUserAccountsFromFile()
         {
             // Try to get the file - It may be locked (in use)
             try
             {
-                using (StreamReader sr = File.OpenText(value))
+                var remoteUserAccountsFile = Path.Combine(CurrentActiveConfig.ConfigurationDirectory, CurrentActiveConfig.RemoteUserAccountsFileName);
+
+                if (!File.Exists(remoteUserAccountsFile))
+                {
+                    log.ErrorFormat($"This file does not exist! {remoteUserAccountsFile}");
+                    return;
+                }
+
+                using (StreamReader sr = File.OpenText(remoteUserAccountsFile))
                 {
                     while (!sr.EndOfStream)
                     {

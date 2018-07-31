@@ -4,6 +4,8 @@ using Archivist;
 using System.Collections.Generic;
 using CombatModule.Model;
 using Newtonsoft.Json;
+using ConnectionDataObjects;
+
 
 namespace CombatModule
 {
@@ -21,12 +23,20 @@ namespace CombatModule
             // --- Register the views for this module with the regions we want to associate them with
             regionManager.RegisterViewWithRegion("PrimaryContentRegion", typeof(Views.CombatViewPrimary));
             //regionManager.RegisterViewWithRegion("AuxContentRegion", typeof(Views.CombatViewAux));
+            
+            // Check our memory model. If it is empty we have not read our data file!
+            if(MyConnections.AllRemoteUserAccounts.Count <= 0)
+            {
+                // So lets read that data file!
 
-            // Call to archivist
-            // read file
-            // load results into DisplayObject
+                Loader.GetRemoteUserAccountsFromFile();
+            }
 
 
+
+            // Triggers our model to rebuild itself from the Connection Data Objects that are propigated 
+            // by the connections file.
+            CombatObjects.RebuildDisplayObjects();
 
             // This is temporary for testing purposes
             //List<DisplayObject> ob = new List<DisplayObject>();
@@ -75,7 +85,7 @@ namespace CombatModule
             //        LastLoginUserIp = "Last User Ip",
             //        IsAvailable = "Yes"
             //    });
-            
+
             //var jobj = JsonConvert.SerializeObject(ob, Formatting.None);
 
             //SaveCharacterFile.SaveConnectionAccounts(jobj);

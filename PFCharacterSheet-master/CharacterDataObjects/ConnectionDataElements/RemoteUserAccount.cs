@@ -1,4 +1,4 @@
-﻿namespace CharacterDataObjects.CharacterDataElements
+﻿namespace ConnectionDataObjects.ConnectionDataElements
 {
     public class RemoteUserAccount
     {

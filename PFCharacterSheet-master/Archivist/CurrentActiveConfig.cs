@@ -13,5 +13,7 @@ namespace Archivist
         public static string saveDirectory = Directory.GetCurrentDirectory();
         public static int? autoSaveFrequency = null;
         public static DateTime? lastSave = DateTime.Now;
+        public static string RemoteUserAccountsFileName = "RemoteUserAccounts.json";
+        public static string ConfigurationDirectory = Directory.GetCurrentDirectory();
     }
 }

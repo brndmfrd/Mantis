@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using CharacterDataObjects.CharacterDataConstants;
-using CharacterDataObjects.CharacterDataElements;
+using ConnectionDataObjects.ConnectionDataElements;
 
-namespace CharacterDataObjects
+namespace ConnectionDataObjects
 {
     /// <summary>
     ///  

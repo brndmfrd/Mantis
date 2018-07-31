@@ -18,9 +18,8 @@ namespace Archivist
         private const string filenamePattern = @"[^\\]+\.json$";
         private static Regex rgx;
         private static ObservableCollection<string> directoryFileList = new ObservableCollection<string>();
-
-
-        public static ObservableCollection<string> DirectoryFileList { get { return directoryFileList; } }
+        
+        public static ObservableCollection<string> DirectoryFileList { get { if (directoryFileList.Count <= 0) { GetFilesFromDefaultDir(); } return directoryFileList; } }
 
         /// <summary>
         /// Look into the default dir and return all .pf files.
@@ -28,6 +27,7 @@ namespace Archivist
         /// <returns></returns>
         public static void GetFilesFromDefaultDir()
         {
+
             var cdir = Directory.GetCurrentDirectory();             // Target local directory
 
             var pfFiles = Directory.GetFiles(cdir, "*.json");         // Target .json files

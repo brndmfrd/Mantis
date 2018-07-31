@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CharacterDataObjects;
+using ConnectionDataObjects;
 using System.Collections.ObjectModel;
 using CharacterDataObjects.CharacterDataConstants;
 
@@ -13,7 +13,7 @@ namespace CombatModule.Model
 {    
     public static class CombatObjects
     {            
-        public static ObservableCollection<DisplayObject> displayObjects = null;
+        public static ObservableCollection<DisplayObject> displayObjects = new ObservableCollection<DisplayObject>();
 
         public static ObservableCollection<DisplayObject> DisplayObjects {
             get
