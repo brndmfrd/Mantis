@@ -50,12 +50,6 @@ namespace NavigationBarModule.ViewModels
         /// <summary>
         /// This is the heart of our navigation. We 'navigate' by changing the views in the registered regions. 
         /// </summary>
-        private void ToCharacter()
-        {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);          // blank content for region
-            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(CharacterModule.Views.CharacterViewPrimary).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(CharacterModule.Views.CharacterViewAux).FullName);
-        }
         private void ToCombat()
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
@@ -91,13 +85,6 @@ namespace NavigationBarModule.ViewModels
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);
             NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(OptionsModule.Views.OptionsViewPrimary).FullName);    // blank content for region
             NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(OptionsModule.Views.OptionsViewAux).FullName);        // blank content for region
-        }
-        private void ToCharacterCreation()
-        {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(CharacterCreationModule.Views.Setup).FullName);              // new character setup view
-            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(System.Windows.Controls.UserControl).FullName);    // blank content for region
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(System.Windows.Controls.UserControl).FullName);        // blank content for region
-            NavigationBarModule.regionManager.RequestNavigate("NavigationBarRegion", typeof(Views.CharacterCreationNavigation).FullName);       // char create nav bar
         }
 
 

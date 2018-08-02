@@ -164,14 +164,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CharacterCreationModule\CharacterCreationModule.csproj">
-      <Project>{91faeee9-ca20-453d-a8ba-247b5afbbaac}</Project>
-      <Name>CharacterCreationModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CharacterModule\CharacterModule.csproj">
-      <Project>{53cd7a1b-b743-4605-8813-64227d0c7190}</Project>
-      <Name>CharacterModule</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CombatModule\CombatModule.csproj">
       <Project>{8454f67a-6822-4b76-baa4-989367ae035a}</Project>
       <Name>CombatModule</Name>
