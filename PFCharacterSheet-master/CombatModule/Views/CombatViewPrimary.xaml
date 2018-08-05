@@ -21,6 +21,7 @@
                      Style="{StaticResource ResourceKey=PrimaryContentListBox}" 
                      ItemContainerStyle="{StaticResource PrimaryContentListBoxItem}" 
                      SelectedItem="{Binding Path=MySelectedObject}"  
+                     Width="400"
                      >
                 <ListBox.InputBindings>
                     <KeyBinding Key="Enter" Command="{Binding RollCheck}"/>
@@ -45,7 +46,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="200"/>
                                     <ColumnDefinition Width="200"/>
-                                    <ColumnDefinition Width="200"/>
+                                    <!--<ColumnDefinition Width="200"/>-->
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
@@ -57,7 +58,7 @@
                                 </Grid.InputBindings>
                                 <TextBlock x:Name="NameOfConnection" Text="{Binding Path=SiteName, Mode=OneWay}" Foreground="#01C5BB" Grid.Column="0"/>
                                 <TextBlock x:Name="AccountName" Text="{Binding Path=UserName, Mode=OneWay}" Grid.Column="1"/>
-                                <TextBlock x:Name="IsAvailable" Text="{Binding Path=IsAvailable, Mode=OneWay}" Grid.Column="2"/>
+                                <!--<TextBlock x:Name="IsAvailable" Text="{Binding Path=IsAvailable, Mode=OneWay}" Grid.Column="2"/>-->
                                 
                             </Grid>
 
@@ -68,88 +69,193 @@
             </ListBox>
 
 
-            <StackPanel Orientation="Vertical" DockPanel.Dock="Right" Width="400">
-                
-            <TextBox x:Name="UserName" 
-                     DockPanel.Dock="Right"
-                     VerticalAlignment="Top"
-                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.UserName, Mode=OneWay}" 
-                     Background="{x:Null}"
-                     Foreground="Teal"
-                     FontSize="14"
-                     TextWrapping="Wrap" />
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Right">
 
-            <TextBox x:Name="MachineName" 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="NameOfConnectionLabel" Text="User" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="UserName" 
+                             Grid.Column="1"
+                             DockPanel.Dock="Right"
+                             VerticalAlignment="Top"
+                             Text="{Binding ElementName=CombatListBox, Path=SelectedItem.UserName, Mode=OneWay}" 
+                             Background="{x:Null}"
+                             BorderBrush="CornflowerBlue"
+                             Foreground="Teal"
+                             FontSize="14"
+                             TextWrapping="Wrap" />
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="MachineNameLabelLabel" Text="Machine" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="MachineName" 
+                             Grid.Column="1"
                      DockPanel.Dock="Right"
                      VerticalAlignment="Top"
                      Text="{Binding ElementName=CombatListBox, Path=SelectedItem.MachineName, Mode=OneWay}" 
                      Background="{x:Null}"
+                     BorderBrush="CornflowerBlue"
                      Foreground="Teal"
                      FontSize="14"
                      TextWrapping="Wrap" />
 
-            <TextBox x:Name="MachineDescription" 
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="MachineDescriptionLabel" Text="Description" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="MachineDescription" 
+                             Grid.Column="1"
                      DockPanel.Dock="Right"
                      VerticalAlignment="Top"
                      Text="{Binding ElementName=CombatListBox, Path=SelectedItem.MachineDescription, Mode=OneWay}" 
                      Background="{x:Null}"
+                     BorderBrush="CornflowerBlue"
                      Foreground="Teal"
                      FontSize="14"
                      TextWrapping="Wrap" />
 
-            <TextBox x:Name="DomainName" 
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="DomainNameLabel" Text="Domain" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="DomainName" 
+                             Grid.Column="1"
                      DockPanel.Dock="Right"
                      VerticalAlignment="Top"
                      Text="{Binding ElementName=CombatListBox, Path=SelectedItem.DomainName, Mode=OneWay}" 
                      Background="{x:Null}"
+                     BorderBrush="CornflowerBlue"
                      Foreground="Teal"
                      FontSize="14"
                      TextWrapping="Wrap" />
 
-            <TextBox x:Name="IpAddress" 
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="IpAddressLabel" Text="IP Address" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="IpAddress" 
+                             Grid.Column="1"
                      DockPanel.Dock="Right"
                      VerticalAlignment="Top"
                      Text="{Binding ElementName=CombatListBox, Path=SelectedItem.IpAddress, Mode=OneWay}" 
                      Background="{x:Null}"
+                     BorderBrush="CornflowerBlue"
                      Foreground="Teal"
                      FontSize="14"
                      TextWrapping="Wrap" />
 
-            <TextBox x:Name="LastLoginUser" 
-                     DockPanel.Dock="Right"
-                     VerticalAlignment="Top"
-                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUser, Mode=OneWay}" 
-                     Background="{x:Null}"
-                     Foreground="Teal"
-                     FontSize="14"
-                     TextWrapping="Wrap" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="ConnectedUserNameLabel" Text="Connected User Name" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="ConnectedUserName" 
+                             Grid.Column="1"
+                         DockPanel.Dock="Right"
+                         VerticalAlignment="Top"
+                         Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
+                         Background="{x:Null}"
+                         BorderBrush="CornflowerBlue"
+                         Foreground="Teal"
+                         FontSize="14"
+                         TextWrapping="Wrap" />
 
-            <TextBox x:Name="LastLoginTimeStamp" 
-                     DockPanel.Dock="Right"
-                     VerticalAlignment="Top"
-                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginTimeStamp, Mode=OneWay}" 
-                     Background="{x:Null}"
-                     Foreground="Teal"
-                     FontSize="14"
-                     TextWrapping="Wrap" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="ConnectedUserIpLabel" Text="Connected User IP" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="ConnectedUserIp" 
+                             Grid.Column="1"
+                         DockPanel.Dock="Right"
+                         VerticalAlignment="Top"
+                         Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
+                         Background="{x:Null}"
+                         BorderBrush="CornflowerBlue"
+                         Foreground="Teal"
+                         FontSize="14"
+                         TextWrapping="Wrap" />
 
-            <TextBox x:Name="LastLogoutTimeStamp" 
-                     DockPanel.Dock="Right"
-                     VerticalAlignment="Top"
-                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLogoutTimeStamp, Mode=OneWay}" 
-                     Background="{x:Null}"
-                     Foreground="Teal"
-                     FontSize="14"
-                     TextWrapping="Wrap" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="ConnectedUserMacineNameLabel" Text="Connected User Machine" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="ConnectedUserMacineName" 
+                             Grid.Column="1"
+                         DockPanel.Dock="Right"
+                         VerticalAlignment="Top"
+                         Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
+                         Background="{x:Null}"
+                         BorderBrush="CornflowerBlue"
+                         Foreground="Teal"
+                         FontSize="14"
+                         TextWrapping="Wrap" />
 
-            <TextBox x:Name="LastLoginUserIp" 
-                     DockPanel.Dock="Right"
-                     VerticalAlignment="Top"
-                     Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
-                     Background="{x:Null}"
-                     Foreground="Teal"
-                     FontSize="14"
-                     TextWrapping="Wrap" />
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="PacketLossLabel" Text="Packet Loss" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="PacketLoss" 
+                             Grid.Column="1"
+                         DockPanel.Dock="Right"
+                         VerticalAlignment="Top"
+                         Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
+                         Background="{x:Null}"
+                         BorderBrush="CornflowerBlue"
+                         Foreground="Teal"
+                         FontSize="14"
+                         TextWrapping="Wrap" />
+
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="DnsVerifiedLabel" Text="DNS Verified" Foreground="#01C5BB" Grid.Column="0" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    <TextBox x:Name="DnsVerified" 
+                             Grid.Column="1"
+                         DockPanel.Dock="Right"
+                         VerticalAlignment="Top"
+                         Text="{Binding ElementName=CombatListBox, Path=SelectedItem.LastLoginUserIp, Mode=OneWay}" 
+                         Background="{x:Null}"
+                         BorderBrush="CornflowerBlue"
+                         Foreground="Teal"
+                         FontSize="14"
+                         TextWrapping="Wrap" />
+
+                </Grid>
+
+
+
+
+
             </StackPanel>
         </DockPanel>
     </Border>
