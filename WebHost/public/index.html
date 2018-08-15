@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="helmet">
+    <div class="head">
+      <font color="white">Inventory Form</font>
+    </div>
+  </div>
+
+  <div id="testId">TEST</div>
+  <div id="test1Id">TEST</div>
+  
+  <div ng-controller='PostsCtrl' class="block">
+  <script>
+    var app = angular.module('app', [])
+    app.controller('PostsCtrl', function ($scope, $http) {
+      $http.get('/api/posts')
+      .success(function (posts) {
+          var y = document.getElementById("testId");
+          y.style.background = 'green';
+        }  
+      })
+    })
+  </script> 
+  
+
+</body>
+</html>
