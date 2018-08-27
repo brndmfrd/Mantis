@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost/inventory', function () {
+mongoose.connect('mongodb://localhost/connections', function () {
   console.log('mongodb connected')
 })
 module.exports = mongoose
