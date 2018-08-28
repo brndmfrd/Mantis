@@ -34,10 +34,34 @@ app.post('/api/newconnection', function (req, res) {
 });
 */
 
-app.post('/api/newconnection', function (req, res, next) {
+// add a new connection to the collection
+app.post('/api/addconnection', function (req, res, next) {
     var post = new Post({
       name : req.body.name,
       ip : req.body.ip
+      });
+    
+    post.save(function(err, post){
+	if(err) {return next(err)}
+	res.send(post);
+    });
+});
+
+// intended for reporting new connections
+// searches for and updates a new connection
+app.post('/api/updateconnection', function (req, res, next) {
+    var post = new Post({
+	username : req.body.name,
+	sitename: req.body.sitename,
+	machinename: req.body.machinename,
+	machinedescription: req.body.machinedescription,
+	domainname: req.body.domainname,
+	ipaddress: req.body.ipaddress,
+	lastloginuser: req.body.lastloginuser,
+	lastlogintimestamp: req.body.lastlogintimestamp,
+	lastloginip: req.body.lastloginip,
+	lastlogout: req.body.lastlogout,
+	isavailable: req.body.isavailable
       });
     
     post.save(function(err, post){
