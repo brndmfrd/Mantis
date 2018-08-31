@@ -51,7 +51,7 @@ app.post('/api/addconnection', function (req, res, next) {
 // searches for and updates a new connection
 app.post('/api/updateconnection', function (req, res, next) {
     var post = new Post({
-	username : req.body.name,
+	username: req.body.username,
 	sitename: req.body.sitename,
 	machinename: req.body.machinename,
 	machinedescription: req.body.machinedescription,
