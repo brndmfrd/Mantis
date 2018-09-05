@@ -44,18 +44,17 @@ namespace CombatModule.Model
             {
                 displayObjects.Add(new DisplayObject
                 {
-                    Id = elem.Id,
-                    UserName = elem.UserName,
-                    SiteName = elem.SiteName,
-                    MachineName = elem.MachineName,
-                    MachineDescription = elem.MachineDescription,
-                    DomainName = elem.DomainName,
-                    IpAddress = elem.IpAddress,
-                    LastLoginUser = elem.LastLoginUser,
-                    LastLoginTimeStamp = elem.LastLoginTimeStamp,
-                    LastLogoutTimeStamp = elem.LastLogoutTimeStamp,
-                    LastLoginUserIp = elem.LastLoginUserIp,
-                    IsAvailable = elem.IsAvailable
+                    UserName = elem.username,
+                    SiteName = elem.sitename,
+                    MachineName = elem.machinename,
+                    MachineDescription = elem.machinedescription,
+                    DomainName = elem.domainname,
+                    IpAddress = elem.ipaddress,
+                    LastLoginUser = elem.lastloginuser,
+                    LastLoginTimeStamp = elem.lastlogintimestamp,
+                    LastLogoutTimeStamp = elem.lastlogout,
+                    LastLoginUserIp = elem.lastloginip,
+                    IsAvailable = elem.isavailable
                 });
             }
         }

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CharacterDataConstants\Constants.cs" />
     <Compile Include="CharacterDataConstants\Enums.cs" />
+    <Compile Include="ConnectionDataElements\NetConfig.cs" />
     <Compile Include="ConnectionDataElements\RemoteUserAccount.cs" />
     <Compile Include="MyConnections.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

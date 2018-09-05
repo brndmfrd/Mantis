@@ -1,18 +1,22 @@
 ﻿namespace Connections.ConnectionDataElements
 {
+    /// <summary>
+    /// Hey Listen!
+    /// Ensure this always matches what our database expects.
+    /// See the web api: ~/WebHost/models/post.js (Sept 2018)
+    /// </summary>
     public class RemoteUserAccount
     {
-        public string Id { get; set; }
-        public string UserName { get; set; }
-        public string SiteName { get; set; }
-        public string MachineName { get; set; }
-        public string MachineDescription { get; set; }
-        public string DomainName { get; set; }
-        public string IpAddress { get; set; }
-        public string LastLoginUser { get; set; }
-        public string LastLoginTimeStamp { get; set; }
-        public string LastLogoutTimeStamp { get; set; }
-        public string LastLoginUserIp { get; set; }
-        public string IsAvailable { get; set; }
+        public string username { get; set; }
+        public string sitename { get; set; }
+        public string machinename { get; set; }
+        public string machinedescription { get; set; }
+        public string domainname { get; set; }
+        public string ipaddress { get; set; }
+        public string lastloginuser { get; set; }
+        public string lastlogintimestamp { get; set; }
+        public string lastloginip { get; set; }
+        public string lastlogout { get; set; }
+        public string isavailable { get; set; }
     }
 }

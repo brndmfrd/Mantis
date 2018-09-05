@@ -7,7 +7,10 @@ using CombatModule.Model;
 using System.Windows.Input;
 using System.Diagnostics;
 using Connections;
+using Connections.ConnectionDataElements;
 
+using Newtonsoft.Json;
+using System;
 
 namespace CombatModule.ViewModels
 {
@@ -57,21 +60,42 @@ namespace CombatModule.ViewModels
             // write a log to the users view
             // communicate to host that a new connection is being made.
             //return; // remove this when ready.
-            using (Process p = new Process())
+            //using (Process p = new Process())
+            //{
+            //    p.StartInfo.FileName = @"C:\WINDOWS\system32\mstsc.exe";
+            //    p.StartInfo.Arguments = $"/v:{MySelectedObject.IpAddress}";
+            //    p.StartInfo.RedirectStandardOutput = true;
+            //    p.StartInfo.UseShellExecute = false;
+            //    p.StartInfo.CreateNoWindow = true;
+            //    p.Start();
+            //    var x = p.Id;   // We need this to keep track of all the connections the user is maintaining. Keep track of these at a higher level and when one is removed, update host.
+            //}
+
+            // TODO: Proceed only if the rdc was successful!
+
+            var timestampNow = DateTime.Now;
+
+            RemoteUserAccount userConnection = new RemoteUserAccount()
             {
-                p.StartInfo.FileName = @"C:\WINDOWS\system32\mstsc.exe";
-                p.StartInfo.Arguments = $"/v:{MySelectedObject.IpAddress}";
-                p.StartInfo.RedirectStandardOutput = true;
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.CreateNoWindow = true;
-                p.Start();
-                var x = p.Id;   // We need this to keep track of all the connections the user is maintaining. Keep track of these at a higher level and when one is removed, update host.
-            }
+                username = MySelectedObject.UserName ?? string.Empty,
+                sitename = MySelectedObject.SiteName ?? string.Empty,
+                machinename = MySelectedObject.MachineName ?? string.Empty,
+                machinedescription = MySelectedObject.MachineDescription ?? string.Empty,
+                domainname = MySelectedObject.DomainName ?? string.Empty,
+                ipaddress = MySelectedObject.IpAddress ?? string.Empty,
+                lastloginuser = MySelectedObject.LastLoginUser ?? string.Empty,
+                lastlogintimestamp = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz"), 
+                lastlogout = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:sszzz") ?? string.Empty,
+                lastloginip = NetConfig.LocalIp ?? string.Empty,
+                isavailable = "NO"
+            };
 
+            var restData = JsonConvert.SerializeObject(userConnection);
 
-            MyConnections.UpdateConnection("","");
+            // Tell the host that we have connected to this user account.
+            MyConnections.UpdateConnection(NetConfig.HostTargetUrlFq, restData);
 
-
+            // Ensure update worked -- TODO: add exception handling here and maybe some retry logic.
         }
         #endregion Private Methods
 
