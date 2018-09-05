@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CharacterDataObjects.CharacterDataConstants
+namespace Connections.CharacterDataConstants
 {
     public class Constants
     {

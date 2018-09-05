@@ -1,4 +1,4 @@
-﻿namespace ConnectionDataObjects.ConnectionDataElements
+﻿namespace Connections.ConnectionDataElements
 {
     public class RemoteUserAccount
     {

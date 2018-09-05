@@ -1,4 +1,4 @@
-﻿using CharacterDataObjects;
+﻿using Connections;
 using System.Collections.ObjectModel;
 using SharedResources.EventHandlers;
 

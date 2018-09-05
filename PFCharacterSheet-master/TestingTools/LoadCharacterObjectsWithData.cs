@@ -1,6 +1,4 @@
-﻿using CharacterDataObjects;
-using CharacterDataObjects.CharacterDataConstants;
-
+﻿
 namespace TestingTools
 {
     public class LoadCharacterObjectsWithData

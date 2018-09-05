@@ -2,8 +2,8 @@
 using System.IO;
 using Newtonsoft.Json;
 using System.Collections.ObjectModel;
-using ConnectionDataObjects;
-using ConnectionDataObjects.ConnectionDataElements;
+using Connections;
+using Connections.ConnectionDataElements;
 using log4net;
 using System.Collections.Generic;
 using Archivist;

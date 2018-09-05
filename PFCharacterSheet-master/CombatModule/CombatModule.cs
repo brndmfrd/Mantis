@@ -4,7 +4,7 @@ using Archivist;
 using System.Collections.Generic;
 using CombatModule.Model;
 using Newtonsoft.Json;
-using ConnectionDataObjects;
+using Connections;
 
 
 namespace CombatModule

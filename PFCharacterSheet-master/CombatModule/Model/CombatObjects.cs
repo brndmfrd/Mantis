@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ConnectionDataObjects;
+using Connections;
 using System.Collections.ObjectModel;
-using CharacterDataObjects.CharacterDataConstants;
+using Connections.CharacterDataConstants;
 
 /// <summary>
 /// The 

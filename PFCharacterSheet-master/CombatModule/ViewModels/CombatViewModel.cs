@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using CombatModule.Model;
 using System.Windows.Input;
 using System.Diagnostics;
+using Connections;
+
 
 namespace CombatModule.ViewModels
 {
@@ -64,7 +66,12 @@ namespace CombatModule.ViewModels
                 p.StartInfo.CreateNoWindow = true;
                 p.Start();
                 var x = p.Id;   // We need this to keep track of all the connections the user is maintaining. Keep track of these at a higher level and when one is removed, update host.
-            }                                  
+            }
+
+
+            MyConnections.UpdateConnection("","");
+
+
         }
         #endregion Private Methods
 

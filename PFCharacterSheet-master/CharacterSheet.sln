@@ -36,7 +36,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTesting", "ModuleTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchivistTesting", "ArchivistTesting\ArchivistTesting.csproj", "{DDAAA925-8941-4669-A163-C08E8236D276}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionDataObjects", "CharacterDataObjects\ConnectionDataObjects.csproj", "{1F0DF7A8-B569-4FBD-8BDA-EB6BF2D5521D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connections", "Connections\Connections.csproj", "{1F0DF7A8-B569-4FBD-8BDA-EB6BF2D5521D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedResources", "SharedResources\SharedResources.csproj", "{40AA4A26-D0C1-40F5-A8F1-09A12969B0F1}"
 EndProject
