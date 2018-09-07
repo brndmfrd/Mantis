@@ -85,3 +85,8 @@ Setup
     (Ubu1804) <configured by default>
 
 # Install Morgan (manual)
+
+# CentOs IP table rule -- assumign port 8000
+	iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 8000 -j ACCEPT -m comment --comment "node Server port"
+	iptables-save
+
