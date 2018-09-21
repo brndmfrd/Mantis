@@ -44,7 +44,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CharacterDataObjects\Connections.csproj">
+    <ProjectReference Include="..\Connections\Connections.csproj">
       <Project>{1f0df7a8-b569-4fbd-8bda-eb6bf2d5521d}</Project>
       <Name>Connections</Name>
     </ProjectReference>
