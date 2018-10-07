@@ -119,10 +119,6 @@
       <Project>{8454f67a-6822-4b76-baa4-989367ae035a}</Project>
       <Name>CombatModule</Name>
     </ProjectReference>
-    <ProjectReference Include="..\FeatsModule\FeatsModule.csproj">
-      <Project>{cf3363eb-89f9-4e99-a846-c83922e85854}</Project>
-      <Name>FeatsModule</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GearModule\GearModule.csproj">
       <Project>{4383310f-5998-4d74-972a-c55f1617df2f}</Project>
       <Name>GearModule</Name>
