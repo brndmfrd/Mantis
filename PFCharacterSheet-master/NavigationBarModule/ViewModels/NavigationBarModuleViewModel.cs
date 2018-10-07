@@ -64,12 +64,6 @@ namespace NavigationBarModule.ViewModels
             NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(SpellsModule.View.SpellsViewAux).FullName);
         }
        
-        private void ToSkills()
-        {
-            NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);         // blank content for region
-            NavigationBarModule.regionManager.RequestNavigate("PrimaryContentRegion", typeof(SkillsModule.View.SkillsViewPrimary).FullName);
-            NavigationBarModule.regionManager.RequestNavigate("AuxContentRegion", typeof(SkillsModule.View.SkillsViewAux).FullName);
-        }
         private void ToOptions()
         {
             NavigationBarModule.regionManager.RequestNavigate("MainRegion", typeof(System.Windows.Controls.UserControl).FullName);
